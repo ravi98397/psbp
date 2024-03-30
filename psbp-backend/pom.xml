@@ -59,25 +59,28 @@
 				</configuration>
 			</plugin>
 			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.3.1</version>
-				<!-- <executions>
-					<execution>
-						<id>copy-ui-build</id>
-						<phase>generate-sources</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/classes/static/</outputDirectory>
-							<resouces>
-								<resource>
-									<directory>${project.basedir}/../psbp-ui/dist/browser/</directory>
-								</resource>
-							</resouces>
-						</configuration>
-					</execution>
-				</executions> -->
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.2.0</version>
+			<executions>
+				<execution>
+				<id>copy-angular-build</id>
+				<phase>prepare-package</phase>
+				<goals>
+					<goal>copy-resources</goal>
+				</goals>
+				<configuration>
+					<outputDirectory>${project.build.directory}/classes/public</outputDirectory>
+					<resources>
+					<resource>
+						<directory>${project.basedir}/../psbp-ui/dist/psbp-ui/browser</directory>
+						<includes>
+						<include>**/*</include>
+						</includes>
+					</resource>
+					</resources>
+				</configuration>
+				</execution>
+			</executions>
 			</plugin>
 		</plugins>
 	</build>
