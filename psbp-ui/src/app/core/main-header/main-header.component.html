@@ -1,0 +1,26 @@
+<div class="navbar">
+  <div class="menu-left">
+    <div class="navbar-logo">
+      splunk&gt;<span>a CISCO company</span>
+    </div>
+    <ul class="menu">
+      <li>Products</li>
+      <li>Solutions</li>
+      <li>Why Splunk?</li>
+      <li>Resources</li>
+    </ul>
+  </div>
+  <ul class="menu-right">
+    <li><mat-icon>search</mat-icon></li>
+    <li>
+      <mat-icon>account_circle</mat-icon>
+      <ul class="submenu1">
+        <li *ngIf="!isLoggedIn">login</li>
+        <li *ngIf="!isLoggedIn">register</li>
+        <li *ngIf="isLoggedIn">Account</li>
+        <li *ngIf="isLoggedIn">Logout</li>
+      </ul>
+    </li>
+    <li><button class="menu-button">Admin Panel</button></li>
+  </ul>
+</div>
